@@ -8,7 +8,7 @@ import products from "../products.json";
 interface Product {
   id: number;
   title: string;
-  price: string;
+  price: number;
   shipping: string;
   image: string;
   sizes: string[];
