@@ -1,0 +1,50 @@
+.container {
+  width: 440px;
+  margin: 60px auto;
+}
+
+.line {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 4px 0;
+}
+
+.button {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  height: 70px;
+  font-size: 26px;
+  font-family: "Azeret Mono", monospace;
+  font-weight: bold;
+  margin-top: 16px;
+  transition: background-color 0.3s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.textContainer {
+  border: 2px solid #fff;
+  padding: 16px;
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: 350px;
+    margin: 40px auto;
+  }
+
+  .line {
+    font-size: 22px;
+  }
+
+  .button {
+    font-size: 20px;
+  }
+}

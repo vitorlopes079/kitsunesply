@@ -1,0 +1,47 @@
+.container {
+  margin: 10px 0 10px 16px;
+}
+
+.featured {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.imagesContainer {
+  display: flex;
+}
+@media (max-width: 900px) {
+  .heroLogo {
+    width: 466.5px;
+    height: 135px;
+  }
+
+  .heroImage {
+    width: 138px;
+    height: 135px;
+  }
+
+  .featured {
+    font-size: 18px; 
+    margin: 16px 8px;
+  }
+}
+
+@media (max-width: 440px) {
+  .heroLogo {
+    width: 311px;
+    height: 90px;
+  }
+
+  .heroImage {
+    width: 87px;
+    height: 85px;
+  }
+
+  .featured {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px 6px;
+  }
+}
