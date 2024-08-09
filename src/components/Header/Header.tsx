@@ -28,6 +28,7 @@ const Header = () => {
           href="https://x.com/kitsunesply"
           target="_blank"
           rel="noopener noreferrer"
+          className={styles.a}
         >
           <Image
             src="/images/x.svg"
