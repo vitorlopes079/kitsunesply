@@ -20,8 +20,8 @@ const Home: React.FC = () => {
       <div className={styles.imageContainer}>
         <Image
           src="/images/draw.svg"
-          width={610}
-          height={453}
+          width={549} 
+          height={408} 
           alt="background decoration"
         />
       </div>

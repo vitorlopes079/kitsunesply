@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import styles from "./ProductCard.module.css";
 import Image from "next/image";
 import { useCart } from "../../context/cartContext";
@@ -21,6 +21,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState<string>("");
   const { addToCart, toggleCartVisibility } = useCart();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleSizeClick = (size: string) => {
     setSelectedSize(size);
@@ -37,7 +38,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         image: product.image,
         size: selectedSize,
       });
-      setTimeout(() => {
+
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      timeoutRef.current = setTimeout(() => {
         toggleCartVisibility();
       }, 100);
     } else {

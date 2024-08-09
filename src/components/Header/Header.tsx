@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
 import React from "react";
 import styles from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "../../context/cartContext"
+import { useCart } from "../../context/cartContext";
 const Header = () => {
   const { toggleCartVisibility } = useCart();
 
@@ -21,6 +21,7 @@ const Header = () => {
         <h2 className={styles.name}>KITSUNESPLY</h2>
       </div>
       <nav className={styles.links}>
+        <Image src="/images/x.svg" width={39} height={41} alt="x logo" className={styles.x}/>
         <Link href="/contact" className={styles.link}>
           Contact
         </Link>

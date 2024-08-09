@@ -19,6 +19,7 @@ body {
   font-family: "Azeret Mono", monospace;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 #__next {

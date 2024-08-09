@@ -11,6 +11,7 @@
 .imagesContainer {
   display: flex;
 }
+
 @media (max-width: 900px) {
   .heroLogo {
     width: 466.5px;
@@ -23,12 +24,30 @@
   }
 
   .featured {
-    font-size: 18px; 
+    font-size: 18px;
     margin: 16px 8px;
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 700px) {
+  .heroLogo {
+    width: 389px;
+    height: 113px;
+  }
+
+  .heroImage {
+    width: 115px;
+    height: 113px;
+  }
+
+  .featured {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 14px 7px;
+  }
+}
+
+@media (max-width: 500px) {
   .heroLogo {
     width: 311px;
     height: 90px;

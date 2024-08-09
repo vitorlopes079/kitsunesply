@@ -100,10 +100,20 @@
   margin-left: 8px;
 }
 
-@media (max-width: 440px) {
+.x {
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.x:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+@media (max-width: 740px) {
   .header {
     flex-direction: column;
-    height: 175px;
+    height: 195px;
     padding-top: 20px;
   }
 
@@ -113,6 +123,11 @@
   }
 
   .links {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+  }
+
+  .x {
+    width: 35px;
+    height: 35px;
   }
 }

@@ -52,30 +52,19 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   }, []);
 
   const addToCart = useCallback((item: CartItem) => {
-    console.log("addToCart called");
-    console.log("Adding to cart:", item);
-
     setCartItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex(
         (i) => i.id === item.id && i.size === item.size
       );
 
-      console.log("Existing item index:", existingItemIndex);
-      console.log(
-        "Cart items before update:",
-        JSON.stringify(prevItems, null, 2)
-      );
-
       if (existingItemIndex >= 0) {
         const updatedItems = [...prevItems];
-        updatedItems[existingItemIndex].quantity += 0.5;
+        updatedItems[existingItemIndex].quantity += 1;
 
-        console.log("Updated items:", JSON.stringify(updatedItems, null, 2));
         lastAddedItemRef.current = { id: item.id, size: item.size };
         return updatedItems;
       } else {
         const newItems = [...prevItems, { ...item, quantity: 1 }];
-        console.log("New items:", JSON.stringify(newItems, null, 2));
         lastAddedItemRef.current = { id: item.id, size: item.size };
         return newItems;
       }
@@ -93,10 +82,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
           )
           .filter((item) => item.quantity > 0);
 
-        console.log(
-          "Cart items after quantity update:",
-          JSON.stringify(updatedItems, null, 2)
-        );
         return updatedItems;
       });
     },
@@ -109,10 +94,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         (item) => !(item.id === id && item.size === size)
       );
 
-      console.log(
-        "Cart items after removal:",
-        JSON.stringify(updatedItems, null, 2)
-      );
       return updatedItems;
     });
   }, []);
@@ -122,7 +103,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       (total, item) => total + item.price * item.quantity,
       0
     );
-    console.log("Total amount:", total);
     return total;
   }, [cartItems]);
 
