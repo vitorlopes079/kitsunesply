@@ -21,7 +21,7 @@ const Header = () => {
         <h2 className={styles.name}>KITSUNESPLY</h2>
       </div>
       <nav className={styles.links}>
-        <Image src="/images/x.svg" width={39} height={41} alt="x logo" className={styles.x}/>
+        <Image src="/images/x.svg" width={32} height={35} alt="x logo" className={styles.x}/>
         <Link href="/contact" className={styles.link}>
           Contact
         </Link>

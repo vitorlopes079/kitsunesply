@@ -50,6 +50,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     }
   }, [selectedSize, addToCart, toggleCartVisibility, product]);
 
+    const handleImageContextMenu = (event: React.MouseEvent) => {
+      event.preventDefault(); 
+    };
+
+
   return (
     <div className={styles.card}>
       <div className={styles.upperContainer}>
@@ -60,6 +65,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             width={500}
             height={500}
             className={styles.image}
+            onContextMenu={handleImageContextMenu}
+
+
           />
         </div>
         <div className={styles.details}>

@@ -76,8 +76,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 47px;
-  height: 47px;
+  width: 55px;
+  height: 39px;
 }
 
 .size::before {
@@ -112,7 +112,7 @@
 }
 
 .selected {
-  border: 2px solid rgb(103, 185, 85)
+  border: 2px solid rgb(123, 205, 105);
 ;
 }
 
