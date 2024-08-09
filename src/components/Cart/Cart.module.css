@@ -245,6 +245,7 @@
 
 @media (max-width: 440px) {
   .cartOverlay {
+    position: fixed;
     justify-content: center;
   }
 }

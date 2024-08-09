@@ -4,9 +4,9 @@
 
 .imageContainer {
   position: absolute;
-  left: 63%;;
+  left: 62%;
   top: 410px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .cardContainer {
@@ -14,7 +14,7 @@
   position: relative;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1320px) {
   .imageContainer {
     display: none;
   }

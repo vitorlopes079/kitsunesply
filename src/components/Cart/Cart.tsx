@@ -4,6 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { useCart } from "../../context/cartContext";
 import styles from "./Cart.module.css";
+import { handleImageContextMenu } from "../../helper/functions";
+
 
 const Cart = () => {
   const {
@@ -30,6 +32,7 @@ const Cart = () => {
                   alt={item.name}
                   width={50}
                   height={50}
+                  onContextMenu={handleImageContextMenu}
                 />
               </div>
               <div className={styles.itemDetails}>
@@ -71,6 +74,7 @@ const Cart = () => {
                   width={22}
                   height={20}
                   alt="trash button"
+                  onContextMenu={handleImageContextMenu}
                 />
               </div>
             </div>

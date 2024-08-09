@@ -4,6 +4,9 @@ import React, { useState, useCallback, useRef } from "react";
 import styles from "./ProductCard.module.css";
 import Image from "next/image";
 import { useCart } from "../../context/cartContext";
+import { handleImageContextMenu } from "../../helper/functions";
+
+
 
 interface Product {
   id: number;
@@ -50,10 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     }
   }, [selectedSize, addToCart, toggleCartVisibility, product]);
 
-    const handleImageContextMenu = (event: React.MouseEvent) => {
-      event.preventDefault(); 
-    };
-
+ 
 
   return (
     <div className={styles.card}>
@@ -66,8 +66,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             height={500}
             className={styles.image}
             onContextMenu={handleImageContextMenu}
-
-
           />
         </div>
         <div className={styles.details}>
@@ -99,6 +97,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
           className={styles.cartIcon}
+          onContextMenu={handleImageContextMenu}
         >
           <path
             fillRule="evenodd"
