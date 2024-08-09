@@ -24,14 +24,20 @@ const Header = () => {
         <h2 className={styles.name}>KITSUNESPLY</h2>
       </div>
       <nav className={styles.links}>
-        <Image
-          src="/images/x.svg"
-          width={32}
-          height={35}
-          alt="x logo"
-          className={styles.x}
-          onContextMenu={handleImageContextMenu}
-        />
+        <a
+          href="https://x.com/kitsunesply"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/images/x.svg"
+            width={32}
+            height={35}
+            alt="x logo"
+            className={styles.x}
+            onContextMenu={handleImageContextMenu}
+          />
+        </a>
         <Link href="/contact" className={styles.link}>
           Contact
         </Link>
