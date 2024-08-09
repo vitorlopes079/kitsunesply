@@ -12,7 +12,7 @@
 }
 
 .cart {
-  background-color: #1e1e1e;
+  background-color: black;
   color: #fff;
   padding: 20px;
   border: 2px solid #fff;
@@ -38,12 +38,12 @@
 }
 
 .cart::-webkit-scrollbar-track {
-  background-color: #1e1e1e;
+  background-color: black;
   border-radius: 4px;
 }
 
 .cart {
-  scrollbar-color: #555 #1e1e1e;
+  scrollbar-color: #555 black;
   scrollbar-width: thin;
 }
 

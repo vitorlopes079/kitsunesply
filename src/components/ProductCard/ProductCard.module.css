@@ -15,6 +15,7 @@
 .imageContainer {
   width: 100%;
   margin-bottom: 16px;
+  padding: 10px;
 }
 
 .image {
@@ -63,7 +64,7 @@
 .size {
   position: relative;
   border: 2px solid #ffffff;
-  background: none;
+  background: black;
   padding: 8px 16px;
   cursor: pointer;
   color: #ffffff;
@@ -72,10 +73,15 @@
   font-family: "Azeret Mono", monospace;
   overflow: hidden;
   transition: color 0.4s ease, background-color 0.4s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 47px;
+  height: 47px;
 }
 
 .size::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -106,30 +112,30 @@
 }
 
 .selected {
-  background-color: #ffffff;
-  color: #000000;
+  border: 2px solid rgb(103, 185, 85)
+;
 }
 
 .addToCart {
   position: relative;
   border: 2px solid #ffffff;
   color: #ffffff;
-  padding: 12px 24px;
+  padding: 8px 24px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   font-family: "Azeret Mono", monospace;
   overflow: hidden;
-  transition: color 0.4s ease, background-color 0.4s ease; 
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
 
 .addToCart::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -137,7 +143,7 @@
   height: 100%;
   background-color: #fff;
   z-index: 0;
-  transition: left 0.4s ease; 
+  transition: left 0.4s ease;
 }
 
 .addToCart:hover::before {
@@ -153,11 +159,11 @@
   position: relative;
   z-index: 1;
   display: block;
-  transition:  fill 0.4s ease; 
+  transition: fill 0.4s ease;
 }
 
 .addToCart > svg {
-  transition: fill 0.4s ease; 
+  transition: fill 0.4s ease;
 }
 
 .addToCart:hover > span,
@@ -166,11 +172,9 @@
   fill: #000;
 }
 
-.cartIcon{
-  margin-right: 6px;
+.cartIcon {
+  margin-right: 8px;
 }
 
-
 @media (max-width: 710px) {
-
 }

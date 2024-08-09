@@ -11,7 +11,7 @@
     "id": 2,
     "title": "SPLY x REKKO ASUKA T-SHIRT - BLACK",
     "price": 19.99,
-    "shipping": "Domestic",
+    "shipping": "International",
     "image": "/images/SHIRT2.svg",
     "sizes": ["S", "M", "L", "XL"]
   },
@@ -20,7 +20,7 @@
     "id": 3,
     "title": "SPLY x REKKO SHINJI T-SHIRT - BLACK",
     "price": 19.99,
-    "shipping": "Domestic",
+    "shipping": "International",
     "image": "/images/SHIRT3.svg",
     "sizes": ["S", "M", "L", "XL"]
   }

@@ -85,8 +85,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       </div>
       <button className={styles.addToCart} onClick={handleAddToCart}>
         <svg
-          width="32"
-          height="32"
+          width="25"
+          height="25"
           viewBox="0 0 32 32"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"

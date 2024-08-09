@@ -4,7 +4,7 @@
 
 .imageContainer {
   position: absolute;
-  right: 0px;
+  left: 63%;;
   top: 410px;
   z-index: -1;
 }
@@ -14,7 +14,7 @@
   position: relative;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1300px) {
   .imageContainer {
     display: none;
   }

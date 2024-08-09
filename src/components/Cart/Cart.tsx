@@ -45,18 +45,20 @@ const Cart = () => {
                 <div className={styles.quantityController}>
                   <div
                     className={styles.quantityDisplay}
-                    onClick={() => updateQuantity(item.id, item.size, 1)}
-                  >
-                    <p className={styles.quantity}>+</p>
-                  </div>
-                  <div className={styles.quantityDisplay}>
-                    <p className={styles.quantity}>{item.quantity}</p>
-                  </div>
-                  <div
-                    className={styles.quantityDisplay}
                     onClick={() => updateQuantity(item.id, item.size, -1)}
                   >
                     <p className={styles.quantity}>-</p>
+                  </div>
+
+                  <div className={styles.quantityDisplay}>
+                    <p className={styles.quantity}>{item.quantity}</p>
+                  </div>
+
+                  <div
+                    className={styles.quantityDisplay}
+                    onClick={() => updateQuantity(item.id, item.size, 1)}
+                  >
+                    <p className={styles.quantity}>+</p>
                   </div>
                 </div>
               </div>
