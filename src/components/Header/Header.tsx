@@ -14,10 +14,10 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.logoContainer}>
         <Image
-          src="/images/logo.svg"
+          src="/images/logo.png"
           alt="Logo"
           width={109}
-          height={73}
+          height={109}
           className={styles.logo}
           onContextMenu={handleImageContextMenu}
         />

@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
         <div className={styles.imageContainer2}>
           <Image
-            src="/images/rekko.svg"
+            src="/images/rekko.png"
             alt="hero image"
             fill
             className={styles.heroImage}
