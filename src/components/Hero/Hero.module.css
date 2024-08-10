@@ -12,13 +12,42 @@
   display: flex;
 }
 
+.imageContainer {
+  width: 683px;
+  height: 205px;
+  position: relative;
+}
+
+.heroLogo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.imageContainer2 {
+  width: 182px;
+  height: 182px;
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 @media (max-width: 900px) {
-  .heroLogo {
+  .imageContainer {
     width: 466.5px;
     height: 135px;
   }
 
-  .heroImage {
+  .imageContainer2 {
     width: 138px;
     height: 135px;
   }
@@ -30,12 +59,12 @@
 }
 
 @media (max-width: 700px) {
-  .heroLogo {
+  .imageContainer {
     width: 389px;
     height: 113px;
   }
 
-  .heroImage {
+  .imageContainer2 {
     width: 115px;
     height: 113px;
   }
@@ -48,12 +77,12 @@
 }
 
 @media (max-width: 500px) {
-  .heroLogo {
+  .imageContainer {
     width: 311px;
     height: 90px;
   }
 
-  .heroImage {
+  .imageContainer2 {
     width: 87px;
     height: 85px;
   }
