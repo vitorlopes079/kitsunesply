@@ -13,43 +13,34 @@
 }
 
 .imageContainer {
-  width: 683px;
-  height: 205px;
-  position: relative;
+  position: relative; /* Required for the Image fill prop */
+  flex: 1 1 auto;
+  max-width: 683px; /* Set the desired maximum width */
+  height: auto;
 }
 
 .heroLogo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  object-fit: contain; /* or 'cover' depending on your preference */
 }
 
 .imageContainer2 {
-  width: 182px;
-  height: 182px;
+  position: relative; /* Required for the Image fill prop */
+  flex: 0 0 182px; /* Set the desired fixed width */
+  height: 182px; /* Set the fixed height */
 }
 
 .heroImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  object-fit: contain; /* or 'cover' depending on your preference */
 }
 
 @media (max-width: 900px) {
   .imageContainer {
-    width: 466.5px;
-    height: 135px;
+    max-width: 466.5px;
   }
 
   .imageContainer2 {
-    width: 138px;
-    height: 135px;
+    flex: 0 0 138px;
+    height: 138px;
   }
 
   .featured {
@@ -60,13 +51,12 @@
 
 @media (max-width: 700px) {
   .imageContainer {
-    width: 389px;
-    height: 113px;
+    max-width: 389px;
   }
 
   .imageContainer2 {
-    width: 115px;
-    height: 113px;
+    flex: 0 0 115px;
+    height: 115px;
   }
 
   .featured {
@@ -78,13 +68,12 @@
 
 @media (max-width: 500px) {
   .imageContainer {
-    width: 311px;
-    height: 90px;
+    max-width: 311px;
   }
 
   .imageContainer2 {
-    width: 87px;
-    height: 85px;
+    flex: 0 0 87px;
+    height: 87px;
   }
 
   .featured {
