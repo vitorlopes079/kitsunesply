@@ -40,7 +40,7 @@ const Header = () => {
           />
         </a>
         <Link href="/contact" className={styles.link}>
-          Contact
+          CONTACT
         </Link>
         <div className={styles.cartContainer} onClick={toggleCartVisibility}>
           <Image
@@ -50,7 +50,7 @@ const Header = () => {
             height={32}
             onContextMenu={handleImageContextMenu}
           />
-          <span className={styles.cartLink}>Cart</span>
+          <span className={styles.cartLink}>CART</span>
         </div>
       </nav>
     </header>

@@ -3,9 +3,17 @@
 import React from "react";
 import Image from "next/image";
 import { useCart } from "../../context/cartContext";
+import { loadStripe } from "@stripe/stripe-js";
 import styles from "./Cart.module.css";
 import { handleImageContextMenu } from "../../helper/functions";
 
+// Ensure the publishable key is available or throw an error
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ||
+    (() => {
+      throw new Error("Stripe publishable key is missing");
+    })()
+);
 
 const Cart = () => {
   const {
@@ -18,6 +26,58 @@ const Cart = () => {
   } = useCart();
 
   if (!isCartVisible) return null;
+
+  const handleCheckout = async () => {
+    // Log the cart items before processing
+    console.log("Cart Items:", cartItems);
+
+    const items = cartItems.map((item) => {
+      // Calculate the price in cents and log it
+      const priceInCents = Math.round(item.price * 100);
+      console.log(
+        `Item: ${item.name}, Price in Dollars: ${item.price}, Price in Cents: ${priceInCents}`
+      );
+
+      return {
+        name: item.name,
+        price: priceInCents, // Ensure the price is an integer in cents
+        quantity: item.quantity,
+      };
+    });
+
+    // Log the final items array that will be sent to Stripe
+    console.log("Items to be sent to Stripe:", items);
+
+    const res = await fetch("/api/checkout_sessions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items }),
+    });
+
+    const session = await res.json();
+
+    const stripe = await stripePromise;
+
+    if (!stripe) {
+      console.error("Stripe initialization failed.");
+      return;
+    }
+
+    if (!session.id) {
+      console.error("Session ID not returned");
+      return;
+    }
+
+    const { error } = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (error) {
+      console.error("Stripe Checkout error:", error);
+    }
+  };
 
   return (
     <div className={styles.cartOverlay} onClick={toggleCartVisibility}>
@@ -87,6 +147,7 @@ const Cart = () => {
             SHIPPING WILL BE CALCULATED AT CHECKOUT
           </p>
         </div>
+        {/* <button className={styles.checkoutButton} onClick={handleCheckout}> */}
         <button className={styles.checkoutButton}>
           <span>CHECKOUT</span>
         </button>
